@@ -1,0 +1,36 @@
+
+òêdataSources:
+  - kind: ethereum/contract
+    mapping:
+      abis:
+        - file:
+            /: /ipfs/QmT5j3kGMkVjUVaW8MhMKRSnZXdTDrTSUcf5MC9hFKNHYf
+          name: YourContract
+      apiVersion: 0.0.6
+      entities:
+        - Greeting
+        - Sender
+        - Receiver
+        - Message
+        - Messenger
+      eventHandlers:
+        - event: 'GreetingChange(indexed address,string,bool,uint256)'
+          handler: handleGreetingChange
+        - event: 'SendMessage(address,address,string)'
+          handler: handleMessage
+      file:
+        /: /ipfs/QmbgboFXwgE5x3H7Z6EDsDCjpuHSr4aZ2YuTetcfo1iaob
+      kind: ethereum/events
+      language: wasm/assemblyscript
+    name: YourContract
+    network: localhost
+    source:
+      abi: YourContract
+      address: '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707'
+description: Greetings
+repository: 'https://github.com/scaffold-eth/se-2/packages/subgraph/'
+schema:
+  file:
+    /: /ipfs/QmTU5SF8nLpLSYUkoKnq3Zsu3wpiXZfpf3BryfdjtA7jPQ
+specVersion: 0.0.4
+ê

@@ -28,6 +28,8 @@ contract YourContract {
 		uint256 value
 	);
 
+	event SendMessage(address _from, address _to, string message);
+
 	// Constructor: Called once on contract deployment
 	// Check packages/hardhat/deploy/00_deploy_your_contract.ts
 	constructor(address _owner) {
@@ -40,6 +42,10 @@ contract YourContract {
 		// msg.sender: predefined variable that represents address of the account that called the current function
 		require(msg.sender == owner, "Not the Owner");
 		_;
+	}
+
+	function sendMessage(address _to, string calldata message) external {
+		emit SendMessage(msg.sender, _to, message);
 	}
 
 	/**
